@@ -5,8 +5,11 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 
+gem 'slim-rails'
+
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
