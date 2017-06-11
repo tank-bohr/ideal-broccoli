@@ -1,0 +1,15 @@
+h1= @title
+.panel
+  table.table.table-hover
+    tr
+      th= t('.group')
+      th= t('.kind')
+      th= t('.dependent_group')
+    - @restrictions.each do |restriction|
+      tr
+        td= link_to restriction.group.name, group_path(restriction.group)
+        td= restriction.kind
+        td
+          - if restriction.dependent_group.present?
+            = link_to restriction.dependent_group.name, group_path(restriction.dependent_group)
+

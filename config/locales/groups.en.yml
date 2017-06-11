@@ -1,0 +1,7 @@
+en:
+  groups:
+    show:
+      id: Id
+      name: Name
+      kind: Kind
+      comment: Comment

@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :welcome, only: %i(index)
+  resources :groups, only: %i(index show)
+  resources :restrictions, only: %i(index)
+  root to: 'welcome#index'
 end

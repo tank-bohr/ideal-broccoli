@@ -1,0 +1,23 @@
+h1= @title
+
+.panel.panel-default
+  .panel-heading
+    strong= @group.name
+
+  .panel-body
+    p
+      strong= "#{t('.id')}: "
+      = @group.id
+
+    p
+      strong= "#{t('.name')}: "
+      code= @group.name
+
+    p
+      strong= "#{t('.kind')}: "
+      code= @group.kind
+
+    - if @group.comment.present?
+      p
+        strong= "#{t('.comment')}: "
+        = @group.comment

@@ -1,0 +1,10 @@
+h1= @title
+.panel
+  table.table.table-hover
+    tr
+      th= t('.name')
+      th= t('.kind')
+    - @groups.each do |group|
+      tr
+        td= group.name
+        td= group.kind
