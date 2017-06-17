@@ -1,10 +1,18 @@
-h1= @title
-.panel
-  table.table.table-hover
-    tr
-      th= t('.name')
-      th= t('.kind')
-    - @groups.each do |group|
+.page-header
+  h1= @title
+.panel.panel-default
+  .panel-heading
+    # = link_to t('.new'), new_group_path, :class => 'btn btn-primary'
+  .panel-body
+    table.table.table-hover
       tr
-        td= group.name
-        td= group.kind
+        th= '#'
+        th= t('.name')
+        th= t('.kind')
+      - @groups.each do |group|
+        tr
+          td= link_to group.id, group_path(group)
+          td= group.name
+          td= group.kind
+          td= link_to t('.edit'), edit_group_path(group), :class => 'btn btn-default btn-sm'
+          td= render 'delete_button', group: group

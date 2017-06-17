@@ -1,0 +1,20 @@
+.panel.panel-default
+  .panel-heading
+    strong= t('.heading')
+  .panel-body
+    = form_for(@group) do |f|
+      = form_group(@group, :name) do
+        = f.label :name
+        = f.text_field :name, :class => 'form-control', :placeholder => t('.name.placeholder')
+        - @group.errors[:name].each do |message|
+          .help-block= message
+      = form_group(@group, :kind) do
+        = f.label :kind
+        = f.select :kind, Group::KINDS, {include_blank: false, prompt: t('.kind.prompt')},\
+                                        {:class => 'form-control'}
+        - @group.errors[:kind].each do |message|
+          .help-block= message
+      = form_group(@group, :comment) do
+        = f.label :comment
+        = f.text_area :comment, :class => 'form-control', :placeholder => t('.comment.placeholder')
+      button.btn.btn-primary type="submit" = t('.submit')

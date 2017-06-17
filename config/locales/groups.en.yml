@@ -1,7 +1,23 @@
 en:
   groups:
+    index:
+      new: New
+      edit: Edit
     show:
       id: Id
       name: Name
       kind: Kind
       comment: Comment
+    new:
+      title: New group
+    form:
+      heading: ''
+      name:
+        placeholder: Enter a group name...
+      kind:
+        prompt: Select a group kind...
+      comment:
+        placeholder: Enter a group comment please...
+      submit: Submit!!1
+    delete_button:
+      title: Delete
